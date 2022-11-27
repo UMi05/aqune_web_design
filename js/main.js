@@ -5,10 +5,10 @@ $(function () {
     document.addEventListener('touchmove', noscroll, {passive: false});
     document.addEventListener('wheel', noscroll, {passive: false});
     setTimeout(() => {
-        $('video').fadeOut(1000);
+        $('video').fadeOut(1500);
         document.removeEventListener('touchmove', noscroll);
         document.removeEventListener('wheel', noscroll);
-    }, 3000);
+    }, 3500);
 
     const hash = $(location).attr('hash');
     if (hash == "#off") {
@@ -20,10 +20,10 @@ $(function () {
         $(".opening").css("display", "block");
 
         setTimeout(() => {
-            $('video').fadeOut(1000);
+            $('video').fadeOut(1500);
             document.removeEventListener('touchmove', noscroll);
             document.removeEventListener('wheel', noscroll);
             $(".opening").css("display", "none");
-        }, 3000);
+        }, 3500);
     }
 });
