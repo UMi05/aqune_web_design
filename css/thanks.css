@@ -1,0 +1,29 @@
+body {
+    background-color: #303030;
+    color: #fff;
+}
+
+h1 {
+    text-align: center;
+    font-size: 30px;
+    margin: 15px 0;
+    padding-bottom: 20px;
+    border-bottom: solid 5px #b33e5c;
+}
+
+p {
+    font-size: 15px;
+    text-align: center;
+}
+
+.back {
+    display: flex;
+    justify-content: center;
+    margin: 30px auto;
+    font-size: 15px;
+    color: #fff;
+    background-color: #b33e5c;
+    padding: 10px 30px;
+    /* box-shadow: 1px 1px 5px #b54b65; */
+    border-radius: 10px;
+}
