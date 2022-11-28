@@ -55,6 +55,8 @@ a {
 .sns-area {
     position: absolute;
     bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -372,6 +374,40 @@ form > span {
     padding: 5px 15px;
 }
 
+@media screen and (min-width: 1024px) {
+
+    .tablet_video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100vw;
+    }
+
+    .phone_video {
+        display: none;
+    }
+
+    .top {
+        position: relative;
+        background: url(../img/blur_bg_pc.webp) no-repeat;
+        background-size: 100vw 100vh;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1;
+    }
+
+    .logo {
+        width: 100px;
+        margin-left: 50px;
+    }
+
+    .sns-area {
+        max-width: 500px;
+    }
+
+}
+
 @media screen and (min-width: 768px) and (max-width: 1023px) {
 
     .tablet_video {
@@ -388,7 +424,7 @@ form > span {
 
     .top {
         position: relative;
-        background: url(../img/blur_bg_tablet.png) no-repeat;
+        background: url(../img/blur_bg_tablet.webp) no-repeat;
         background-size: 100vw 100vh;
         width: 100vw;
         height: 100vh;
@@ -396,7 +432,7 @@ form > span {
     }
 
     .logo {
-        width: 150px;
+        width: 100px;
         margin-left: 50px;
     }
 
