@@ -8,6 +8,7 @@ $(function () {
         $('video').fadeOut(1500);
         document.removeEventListener('touchmove', noscroll);
         document.removeEventListener('wheel', noscroll);
+        $(".opening").fadeOut("slow");
     }, 3500);
 
     const hash = $(location).attr('hash');
@@ -23,7 +24,7 @@ $(function () {
             $('video').fadeOut(1500);
             document.removeEventListener('touchmove', noscroll);
             document.removeEventListener('wheel', noscroll);
-            $(".opening").css("display", "none");
+            $(".opening").fadeOut("slow");
         }, 3500);
     }
 });
