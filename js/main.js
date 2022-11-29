@@ -1,9 +1,4 @@
 $(function () {
-    function noscroll(e){
-        e.preventDefault();
-    }
-    document.addEventListener('touchmove', noscroll, {passive: false});
-    document.addEventListener('wheel', noscroll, {passive: false});
     setTimeout(() => {
         $('video').fadeOut(1500);
         document.removeEventListener('touchmove', noscroll);
@@ -18,6 +13,11 @@ $(function () {
 
     entries = window.performance.getEntriesByType("navigation");
     if (entries[0].type === 'reload') {
+        function noscroll(e){
+            e.preventDefault();
+        }
+        document.addEventListener('touchmove', noscroll, {passive: false});
+        document.addEventListener('wheel', noscroll, {passive: false});
         $(".opening").css("display", "block");
 
         setTimeout(() => {
