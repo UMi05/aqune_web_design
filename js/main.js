@@ -1,5 +1,12 @@
 $(function () {
 
+    setTimeout(() => {
+        $('video').fadeOut(1500);
+        document.removeEventListener('touchmove', noscroll);
+        document.removeEventListener('wheel', noscroll);
+        $(".opening").fadeOut("slow");
+    }, 3000);
+
     $(function() {
         $('#switch').on('click', function() {
             $('.staff-card').toggleClass('rotate_front').toggleClass('rotate_back');
@@ -25,6 +32,6 @@ $(function () {
             document.removeEventListener('touchmove', noscroll);
             document.removeEventListener('wheel', noscroll);
             $(".opening").fadeOut("slow");
-        }, 3500);
+        }, 3000);
     }
 });
