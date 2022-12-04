@@ -15,11 +15,11 @@
 </head>
     <body>
 
+        <div class="opening">
+            <video class="phone_video" src="./mp4/h265aqune_smartphone.mp4" muted autoplay playsinline></video>
+            <video class="tablet_video" src="./mp4/265aqune_tablet.mp4" muted autoplay playsinline></video>
+        </div>
         <div class="top">
-            <div class="opening">
-                <video class="phone_video" src="./mp4/h265aqune_smartphone.mp4" muted autoplay playsinline></video>
-                <video class="tablet_video" src="./mp4/265aqune_tablet.mp4" muted autoplay playsinline></video>
-            </div>
             <img class="logo" src="./img/aqune_logo-clearBG.webp" alt="">
             <h1 class="top-title">
                 <span class="sub-title">俳優・女優を目指す方の為の</span><br>
@@ -62,30 +62,33 @@
             <h1 class="title">Staff Infomation</h1>
             <div class="staff-container">
                 <h1 class="staff_name">代表 阿久根 忍</h1>
-                <div class="staff-card">
+                <div class="staff-card rotate_front">
                     <div class="staff_img">
                         <img src="./img/IMG_2165.webp" alt="">
                     </div>
                     <div class="text_area">
-                        <h2>生年月日</h2>
-                        <p>
-                            1991年6月17日
-                        </p>
-                        <h2>趣味</h2>
-                        <p>
-                            ゲーム、アニメ、映画鑑賞
-                        </p>
-                        <h2>一言</h2>
-                        <p>
-                            楽しくをモットーに<br>
-                            生きています。<br>
-                            何事も、<br>
-                            楽しくないと続きません。<br>
-                            でも楽しいだけでは人は<br>
-                            成長しない。切磋琢磨し、<br>
-                            頑張りましょう！！
-                        </p>
+                        <div class="text">
+                            <h2>生年月日</h2>
+                            <p>
+                                1991年6月17日
+                            </p>
+                            <h2>趣味</h2>
+                            <p>
+                                ゲーム、アニメ、映画鑑賞
+                            </p>
+                            <h2>一言</h2>
+                            <p>
+                                楽しくをモットーに<br>
+                                生きています。<br>
+                                何事も、<br>
+                                楽しくないと続きません。<br>
+                                でも楽しいだけでは人は<br>
+                                成長しない。切磋琢磨し、<br>
+                                頑張りましょう！！
+                            </p>
+                        </div>
                     </div>
+                    <button id="switch">READ</button>
                 </div>
             </div>
         </div>
@@ -177,7 +180,11 @@
                     <select name="entry.500690425" id="age" required>
                         <script>
                             for (let i = 1; i < 101; i ++) {
-                                document.write(`<option value="${i}">${i}</option>`)
+                                if (i == 20) {
+                                    document.write(`<option value="${i}" selected>${i}</option>`);
+                                } else {
+                                    document.write(`<option value="${i}">${i}</option>`);
+                                }
                             }
                         </script>
                     </select>

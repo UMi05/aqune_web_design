@@ -1,13 +1,13 @@
 $(function () {
-    setTimeout(() => {
-        $('video').fadeOut(1500);
-        document.removeEventListener('touchmove', noscroll);
-        document.removeEventListener('wheel', noscroll);
-        $(".opening").fadeOut("slow");
-    }, 3500);
+
+    $(function() {
+        $('#switch').on('click', function() {
+            $('.staff-card').toggleClass('rotate_front').toggleClass('rotate_back');
+        });
+    });
 
     const hash = $(location).attr('hash');
-    if (hash == "#off") {
+    if (hash == "#top") {
         $(".opening").css("display", "none");
     }
 

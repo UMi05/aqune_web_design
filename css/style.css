@@ -13,8 +13,18 @@
 }
 
 body {
+    position: relative;
     background-color: #303030;
     color: #fff;
+}
+
+input, select, textarea {
+    font-size: 16px;
+}
+
+select {
+    color: #303030;
+    text-align: -webkit-center;
 }
 
 li {
@@ -26,15 +36,13 @@ a {
 }
 
 .opening {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 10;
+    z-index: 999;
     background-color: black;
-    display: block;
 }
 
 .top-title {
@@ -142,18 +150,8 @@ a {
     position: relative;
     max-width: 600px;
     margin: 0 auto;
+    padding-bottom: 60px;
     overflow: hidden;
-}
-
-.diagonal-line {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -40%) rotate(-45deg);
-    width: 50px;
-    height: 1200px;
-    z-index: -1;
-    background-color: #b33e5c;
 }
 
 .staff-container {
@@ -162,16 +160,17 @@ a {
 
 .staff-card {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    position: relative;
     width: 350px;
     border: solid 2px #fff;
     margin: 0 auto;
-    padding: 10px 3px;
+    padding: 10px 0;
 }
 
 .staff_img {
-    width: 150px;
-    margin: auto 10px;
+    width: 250px;
+    margin: auto ;
 }
 
 .staff_img > img {
@@ -185,25 +184,80 @@ a {
 }
 
 .text_area {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    width: 250px;
+    height: 380px;
+    background-color: #fff;
+}
+
+.text h2 {
     display: inline-block;
-    width: 50%;
-    margin: auto 0;
+    color: #b33e5c;
+    font-size: 16px;
+    padding-left: 10px;
 }
 
-.text_area h2 {
-    color: #FFE299;
-    font-size: 12px;
-    margin: 5px;
+.text p {
+    display: inline-block;
+    color: #303030;
+    width: 100%;
+    font-size: 14px;
+    padding: 5px 20px;
 }
 
-.text_area p {
-    font-size: 12px;
+#switch {
+    width: 80px;
+    margin: 10px auto 0;
+    padding: 10px 15px;
+    color: #fff;
+    background-color: #b33e5c;
+    border: 1px solid #303030;
+    border-radius: 10px;
+}
+
+/* 表面の表示 */
+.rotate_front .staff_img {
+    opacity: 1;
+    transform: rotateY(0deg);
+    transition: opacity 100ms 150ms, transform 300ms 150ms;
+}
+.rotate_front .text_area {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotateY(90deg);
+    transition: opacity 50ms 200ms, transform 300ms;
+}
+
+/* 裏面の表示 */
+.rotate_back .staff_img {
+    opacity: 0;
+    transform: rotateY(90deg);
+    transition: opacity 50ms 200ms, transform 300ms;
+}
+.rotate_back .text_area {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotateY(0deg);
+    transition: opacity 100ms 150ms, transform 300ms 150ms;
+}
+
+.diagonal-line {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -45%) rotate(-55deg);
+    width: 50px;
+    height: 1200px;
+    z-index: -1;
+    background-color: #b33e5c;
 }
 
 #service_price {
     position: relative;
     max-width: 500px;
-    margin: 50px auto 0;
+    margin: 0 auto;
     padding: 20px;
 }
 
